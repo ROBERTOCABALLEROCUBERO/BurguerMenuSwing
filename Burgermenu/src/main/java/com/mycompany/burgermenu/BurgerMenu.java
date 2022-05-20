@@ -26,13 +26,68 @@ public class BurgerMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenu3 = new javax.swing.JMenu();
+        GrupoBurger = new javax.swing.ButtonGroup();
+        Grupopan = new javax.swing.ButtonGroup();
+        GrupoPatatas = new javax.swing.ButtonGroup();
+        GrupoBebidas = new javax.swing.ButtonGroup();
+        jPanel1 = new javax.swing.JPanel();
+        Pedido = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-
-        jMenu3.setText("jMenu3");
+        Hamburguesa = new javax.swing.JMenu();
+        HPollo = new javax.swing.JRadioButtonMenuItem();
+        HCerdo = new javax.swing.JRadioButtonMenuItem();
+        HVegana = new javax.swing.JRadioButtonMenuItem();
+        HTernera = new javax.swing.JRadioButtonMenuItem();
+        Pan = new javax.swing.JMenu();
+        PanNormal = new javax.swing.JRadioButtonMenuItem();
+        PanIntegral = new javax.swing.JRadioButtonMenuItem();
+        PanCenteno = new javax.swing.JRadioButtonMenuItem();
+        Patatas = new javax.swing.JMenu();
+        PFritas = new javax.swing.JRadioButtonMenuItem();
+        PGajo = new javax.swing.JRadioButtonMenuItem();
+        PCaseras = new javax.swing.JRadioButtonMenuItem();
+        Bebidas = new javax.swing.JMenu();
+        BCola = new javax.swing.JRadioButtonMenuItem();
+        BLimon = new javax.swing.JRadioButtonMenuItem();
+        BNaranja = new javax.swing.JRadioButtonMenuItem();
+        BCerveza = new javax.swing.JRadioButtonMenuItem();
+        bAgua = new javax.swing.JRadioButtonMenuItem();
+        Extras = new javax.swing.JMenu();
+        Extracarne = new javax.swing.JCheckBoxMenuItem();
+        Extraqueso = new javax.swing.JCheckBoxMenuItem();
+        Extrapatatas = new javax.swing.JCheckBoxMenuItem();
+        Recogidalocal = new javax.swing.JCheckBoxMenuItem();
+        Salsas = new javax.swing.JCheckBoxMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(255, 91, 3));
+
+        Pedido.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        Pedido.setText("¡Hacer Pedido!");
+        Pedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PedidoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(114, Short.MAX_VALUE)
+                .addComponent(Pedido, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(95, 95, 95))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(206, Short.MAX_VALUE)
+                .addComponent(Pedido, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(164, 164, 164))
+        );
 
         jMenu1.setText("Pedido");
         jMenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -40,6 +95,136 @@ public class BurgerMenu extends javax.swing.JFrame {
         jMenu1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jMenu1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jMenu1.setMargin(new java.awt.Insets(2, 200, 2, 230));
+
+        Hamburguesa.setText("Hamburguesa");
+
+        GrupoBurger.add(HPollo);
+        HPollo.setSelected(true);
+        HPollo.setText("Pollo");
+        Hamburguesa.add(HPollo);
+
+        GrupoBurger.add(HCerdo);
+        HCerdo.setText("Cerdo");
+        HCerdo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HCerdoActionPerformed(evt);
+            }
+        });
+        Hamburguesa.add(HCerdo);
+
+        GrupoBurger.add(HVegana);
+        HVegana.setText("Vegana (+1€)");
+        Hamburguesa.add(HVegana);
+
+        GrupoBurger.add(HTernera);
+        HTernera.setText("Ternera (+1€)");
+        Hamburguesa.add(HTernera);
+
+        jMenu1.add(Hamburguesa);
+
+        Pan.setText("Pan");
+
+        Grupopan.add(PanNormal);
+        PanNormal.setSelected(true);
+        PanNormal.setText("Normal");
+        Pan.add(PanNormal);
+
+        Grupopan.add(PanIntegral);
+        PanIntegral.setText("Integral");
+        Pan.add(PanIntegral);
+
+        Grupopan.add(PanCenteno);
+        PanCenteno.setText("Centeno");
+        PanCenteno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PanCentenoActionPerformed(evt);
+            }
+        });
+        Pan.add(PanCenteno);
+
+        jMenu1.add(Pan);
+
+        Patatas.setText("Patatas");
+
+        GrupoPatatas.add(PFritas);
+        PFritas.setSelected(true);
+        PFritas.setText("Fritas");
+        Patatas.add(PFritas);
+
+        GrupoPatatas.add(PGajo);
+        PGajo.setText("Gajo");
+        Patatas.add(PGajo);
+
+        GrupoPatatas.add(PCaseras);
+        PCaseras.setText("Caseras (+1€)");
+        Patatas.add(PCaseras);
+
+        jMenu1.add(Patatas);
+
+        Bebidas.setText("Bebidas");
+
+        GrupoBebidas.add(BCola);
+        BCola.setSelected(true);
+        BCola.setText("Cola");
+        Bebidas.add(BCola);
+
+        GrupoBebidas.add(BLimon);
+        BLimon.setText("Limon");
+        BLimon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BLimonActionPerformed(evt);
+            }
+        });
+        Bebidas.add(BLimon);
+
+        GrupoBebidas.add(BNaranja);
+        BNaranja.setText("Naranja");
+        BNaranja.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BNaranjaActionPerformed(evt);
+            }
+        });
+        Bebidas.add(BNaranja);
+
+        GrupoBebidas.add(BCerveza);
+        BCerveza.setText("Cerveza");
+        Bebidas.add(BCerveza);
+
+        GrupoBebidas.add(bAgua);
+        bAgua.setText("Agua");
+        Bebidas.add(bAgua);
+
+        jMenu1.add(Bebidas);
+
+        Extras.setText("Extras");
+
+        Extracarne.setText("Extra Carne (+2€)");
+        Extracarne.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExtracarneActionPerformed(evt);
+            }
+        });
+        Extras.add(Extracarne);
+
+        Extraqueso.setText("Extra Queso (+0,50€)");
+        Extras.add(Extraqueso);
+
+        Extrapatatas.setText("Extra Patatas (+1€)");
+        Extras.add(Extrapatatas);
+
+        Recogidalocal.setText("Recogida en local");
+        Extras.add(Recogidalocal);
+
+        Salsas.setText("Salsas");
+        Salsas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalsasActionPerformed(evt);
+            }
+        });
+        Extras.add(Salsas);
+
+        jMenu1.add(Extras);
+
         jMenuBar2.add(jMenu1);
 
         setJMenuBar(jMenuBar2);
@@ -48,15 +233,75 @@ public class BurgerMenu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 472, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 364, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void HCerdoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HCerdoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HCerdoActionPerformed
+
+    private void PanCentenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PanCentenoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PanCentenoActionPerformed
+
+    private void BLimonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BLimonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BLimonActionPerformed
+
+    private void BNaranjaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BNaranjaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BNaranjaActionPerformed
+
+    private void ExtracarneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExtracarneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ExtracarneActionPerformed
+
+    private void PedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PedidoActionPerformed
+        // TODO add your handling code here:
+        double precio = 8;
+        double sumasalsas;
+        if (HTernera.isSelected() || HVegana.isSelected()) {
+            precio = precio + 1;
+        }
+        if (PCaseras.isSelected()) {
+            precio = precio + 1;
+        }
+        if (PCaseras.isSelected()) {
+            precio = precio + 1;
+        }
+        if (Extracarne.isSelected()) {
+            precio = precio + 2;
+        }
+        if (Extraqueso.isSelected()) {
+            precio = precio + 0.50;
+        }
+        if (Extrapatatas.isSelected()) {
+            precio = precio + 1;
+        }
+          
+
+
+    }//GEN-LAST:event_PedidoActionPerformed
+
+    private void SalsasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalsasActionPerformed
+        // TODO add your handling code here:
+        if(Salsas.isSelected()){
+            new Salsas().setVisible(true);
+        }
+    }//GEN-LAST:event_SalsasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -94,8 +339,38 @@ public class BurgerMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButtonMenuItem BCerveza;
+    private javax.swing.JRadioButtonMenuItem BCola;
+    private javax.swing.JRadioButtonMenuItem BLimon;
+    private javax.swing.JRadioButtonMenuItem BNaranja;
+    private javax.swing.JMenu Bebidas;
+    private javax.swing.JCheckBoxMenuItem Extracarne;
+    private javax.swing.JCheckBoxMenuItem Extrapatatas;
+    private javax.swing.JCheckBoxMenuItem Extraqueso;
+    private javax.swing.JMenu Extras;
+    private javax.swing.ButtonGroup GrupoBebidas;
+    private javax.swing.ButtonGroup GrupoBurger;
+    private javax.swing.ButtonGroup GrupoPatatas;
+    private javax.swing.ButtonGroup Grupopan;
+    private javax.swing.JRadioButtonMenuItem HCerdo;
+    private javax.swing.JRadioButtonMenuItem HPollo;
+    private javax.swing.JRadioButtonMenuItem HTernera;
+    private javax.swing.JRadioButtonMenuItem HVegana;
+    private javax.swing.JMenu Hamburguesa;
+    private javax.swing.JRadioButtonMenuItem PCaseras;
+    private javax.swing.JRadioButtonMenuItem PFritas;
+    private javax.swing.JRadioButtonMenuItem PGajo;
+    private javax.swing.JMenu Pan;
+    private javax.swing.JRadioButtonMenuItem PanCenteno;
+    private javax.swing.JRadioButtonMenuItem PanIntegral;
+    private javax.swing.JRadioButtonMenuItem PanNormal;
+    private javax.swing.JMenu Patatas;
+    private javax.swing.JButton Pedido;
+    private javax.swing.JCheckBoxMenuItem Recogidalocal;
+    private javax.swing.JCheckBoxMenuItem Salsas;
+    private javax.swing.JRadioButtonMenuItem bAgua;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
