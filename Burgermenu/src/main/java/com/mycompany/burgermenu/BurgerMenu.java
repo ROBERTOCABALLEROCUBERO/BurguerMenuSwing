@@ -274,6 +274,7 @@ public class BurgerMenu extends javax.swing.JFrame {
         Salsas salsa1 = new Salsas();
         double precio = 8;
         double sumasalsas;
+        Recibo recibo1 = new Recibo();
         Menu menu1 = new Menu();
         if (HTernera.isSelected() || HVegana.isSelected()) {
             precio = precio + 1;
@@ -297,14 +298,19 @@ public class BurgerMenu extends javax.swing.JFrame {
                 + ((Integer) salsa1.getMostaza().getValue() * 0.50) + ((Integer) salsa1.getThai().getValue() * 0.50);
         
         precio = precio + sumasalsas;
-        if(Recogidalocal.isSelected()){
-        double descuento = precio * 0.2;
-        precio = precio - descuento;
+        if (Recogidalocal.isSelected()) {
+            double descuento = precio * 0.2;
+            precio = precio - descuento;
         }
         
         menu1.setPreciofinal(precio);
         
         new BurgerMenu().setVisible(false);
+        recibo1.getPrecioNoIVA().setText(recibo1.getPrecioNoIVA().getText() + menu1.getPreciofinal() + "€");
+        recibo1.getIVA().setText(recibo1.getIVA().getText() + menu1.getIva()+ "€");
+        recibo1.getPreciofinal().setText(recibo1.getPreciofinal().getText() + menu1.getSumatotal() + "€");
+        
+        new Recibo().setVisible(true);
     }//GEN-LAST:event_PedidoActionPerformed
 
     private void SalsasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalsasActionPerformed
@@ -312,6 +318,7 @@ public class BurgerMenu extends javax.swing.JFrame {
         if (Salsas.isSelected()) {
             new Salsas().setVisible(true);
         }
+        Salsas.setSelected(false);
     }//GEN-LAST:event_SalsasActionPerformed
 
     /**

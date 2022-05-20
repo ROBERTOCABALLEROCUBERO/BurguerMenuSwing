@@ -118,6 +118,7 @@ public class Salsas extends javax.swing.JFrame {
 
     private void CerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarActionPerformed
         // TODO add your handling code here:
+       
         new Salsas().setVisible(false);
 
     }//GEN-LAST:event_CerrarActionPerformed
@@ -168,7 +169,6 @@ public class Salsas extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Salsas().setVisible(true);
             }
         });
     }

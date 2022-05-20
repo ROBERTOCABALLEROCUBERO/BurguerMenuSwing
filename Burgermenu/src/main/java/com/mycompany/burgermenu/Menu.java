@@ -11,6 +11,7 @@ package com.mycompany.burgermenu;
 public class Menu {
     private double preciofinal;
     private final double iva = getPreciofinal() * 0.21;
+    private final double sumatotal = getPreciofinal() + getIva();
 
     public double getPreciofinal() {
         return preciofinal;
@@ -22,6 +23,10 @@ public class Menu {
 
     public double getIva() {
         return iva;
+    }
+
+    public double getSumatotal() {
+        return sumatotal;
     }
     
     
