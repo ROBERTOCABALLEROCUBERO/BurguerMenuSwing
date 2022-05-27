@@ -32,6 +32,11 @@ public class BurgerMenu extends javax.swing.JFrame {
         GrupoBebidas = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         Pedido = new javax.swing.JButton();
+        Ketchup = new javax.swing.JSpinner();
+        Mostaza = new javax.swing.JSpinner();
+        Barbacoa = new javax.swing.JSpinner();
+        Thai = new javax.swing.JSpinner();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         Hamburguesa = new javax.swing.JMenu();
@@ -72,21 +77,44 @@ public class BurgerMenu extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setText("SALSAS");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(114, Short.MAX_VALUE)
-                .addComponent(Pedido, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(95, 95, 95))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(122, 122, 122)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Pedido, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(Ketchup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(Mostaza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Barbacoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addComponent(Thai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(122, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(206, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Ketchup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Mostaza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Barbacoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Thai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
                 .addComponent(Pedido, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(164, 164, 164))
+                .addGap(170, 170, 170))
         );
 
         jMenu1.setText("Pedido");
@@ -271,11 +299,9 @@ public class BurgerMenu extends javax.swing.JFrame {
 
     private void PedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PedidoActionPerformed
         // TODO add your handling code here:
-        Salsas salsa1 = new Salsas();
         double precio = 8;
         double sumasalsas;
-        Recibo recibo1 = new Recibo();
-        Menu menu1 = new Menu();
+        
         if (HTernera.isSelected() || HVegana.isSelected()) {
             precio = precio + 1;
         }
@@ -293,32 +319,17 @@ public class BurgerMenu extends javax.swing.JFrame {
         }
         if (Extrapatatas.isSelected()) {
             precio = precio + 1;
-        }
-        sumasalsas = ((Integer) salsa1.getBarbacoa().getValue() * 0.50) + ((Integer) salsa1.getKetchup().getValue() * 0.50)
-                + ((Integer) salsa1.getMostaza().getValue() * 0.50) + ((Integer) salsa1.getThai().getValue() * 0.50);
+
         
-        precio = precio + sumasalsas;
         if (Recogidalocal.isSelected()) {
             double descuento = precio * 0.2;
             precio = precio - descuento;
         }
-        
-        menu1.setPreciofinal(precio);
-        
-        new BurgerMenu().setVisible(false);
-        recibo1.getPrecioNoIVA().setText(recibo1.getPrecioNoIVA().getText() + menu1.getPreciofinal() + "€");
-        recibo1.getIVA().setText(recibo1.getIVA().getText() + menu1.getIva()+ "€");
-        recibo1.getPreciofinal().setText(recibo1.getPreciofinal().getText() + menu1.getSumatotal() + "€");
-        
-        new Recibo().setVisible(true);
+        sumasalsas = ((Double) Ketchup.getValue()  +  (Double) Mostaza.getValue() + (Double) Thai.getValue() + (Double) Barbacoa.getValue()) * 0.5;
     }//GEN-LAST:event_PedidoActionPerformed
-
+    }
     private void SalsasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalsasActionPerformed
         // TODO add your handling code here:
-        if (Salsas.isSelected()) {
-            new Salsas().setVisible(true);
-        }
-        Salsas.setSelected(false);
     }//GEN-LAST:event_SalsasActionPerformed
 
     /**
@@ -361,6 +372,7 @@ public class BurgerMenu extends javax.swing.JFrame {
     private javax.swing.JRadioButtonMenuItem BCola;
     private javax.swing.JRadioButtonMenuItem BLimon;
     private javax.swing.JRadioButtonMenuItem BNaranja;
+    private javax.swing.JSpinner Barbacoa;
     private javax.swing.JMenu Bebidas;
     private javax.swing.JCheckBoxMenuItem Extracarne;
     private javax.swing.JCheckBoxMenuItem Extrapatatas;
@@ -375,6 +387,8 @@ public class BurgerMenu extends javax.swing.JFrame {
     private javax.swing.JRadioButtonMenuItem HTernera;
     private javax.swing.JRadioButtonMenuItem HVegana;
     private javax.swing.JMenu Hamburguesa;
+    private javax.swing.JSpinner Ketchup;
+    private javax.swing.JSpinner Mostaza;
     private javax.swing.JRadioButtonMenuItem PCaseras;
     private javax.swing.JRadioButtonMenuItem PFritas;
     private javax.swing.JRadioButtonMenuItem PGajo;
@@ -386,7 +400,9 @@ public class BurgerMenu extends javax.swing.JFrame {
     private javax.swing.JButton Pedido;
     private javax.swing.JCheckBoxMenuItem Recogidalocal;
     private javax.swing.JCheckBoxMenuItem Salsas;
+    private javax.swing.JSpinner Thai;
     private javax.swing.JRadioButtonMenuItem bAgua;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel1;

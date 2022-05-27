@@ -286,19 +286,43 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="114" max="32767" attributes="0"/>
-                  <Component id="Pedido" min="-2" pref="243" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="Pedido" min="-2" pref="243" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jLabel1" min="-2" pref="179" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="Ketchup" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                          <Component id="Mostaza" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="Barbacoa" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                          <Component id="Thai" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="122" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="206" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="28" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Ketchup" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Mostaza" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Barbacoa" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Thai" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="115" max="32767" attributes="0"/>
                   <Component id="Pedido" min="-2" pref="45" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="164" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -314,6 +338,22 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PedidoActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JSpinner" name="Ketchup">
+        </Component>
+        <Component class="javax.swing.JSpinner" name="Mostaza">
+        </Component>
+        <Component class="javax.swing.JSpinner" name="Barbacoa">
+        </Component>
+        <Component class="javax.swing.JSpinner" name="Thai">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="36" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SALSAS"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
