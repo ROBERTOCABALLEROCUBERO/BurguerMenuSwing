@@ -4,6 +4,8 @@
  */
 package com.mycompany.burgermenu;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author Jose Angel
@@ -15,6 +17,9 @@ public class BurgerMenu extends javax.swing.JFrame {
      */
     public BurgerMenu() {
         initComponents();
+        Preciototal.setVisible(false);
+        Precio_final.setVisible(false);
+        Ivatext.setVisible(false);
     }
 
     /**
@@ -30,6 +35,7 @@ public class BurgerMenu extends javax.swing.JFrame {
         Grupopan = new javax.swing.ButtonGroup();
         GrupoPatatas = new javax.swing.ButtonGroup();
         GrupoBebidas = new javax.swing.ButtonGroup();
+        scrollbar1 = new java.awt.Scrollbar();
         jPanel1 = new javax.swing.JPanel();
         Pedido = new javax.swing.JButton();
         Ketchup = new javax.swing.JSpinner();
@@ -37,6 +43,13 @@ public class BurgerMenu extends javax.swing.JFrame {
         Barbacoa = new javax.swing.JSpinner();
         Thai = new javax.swing.JSpinner();
         jLabel1 = new javax.swing.JLabel();
+        Preciototal = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        Ivatext = new javax.swing.JLabel();
+        Precio_final = new javax.swing.JLabel();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         Hamburguesa = new javax.swing.JMenu();
@@ -80,41 +93,89 @@ public class BurgerMenu extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setText("SALSAS");
 
+        Preciototal.setText("Precio:");
+
+        jLabel3.setText("Ketchup");
+
+        jLabel4.setText("Mostaza");
+
+        jLabel5.setText("Thai");
+
+        jLabel6.setText("Babacoa");
+
+        Ivatext.setText("Iva:");
+
+        Precio_final.setText("Precio Final:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(122, 122, 122)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Pedido, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24))
+                .addContainerGap()
+                .addComponent(Pedido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(118, 118, 118)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Ketchup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addComponent(Mostaza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Barbacoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
-                        .addComponent(Thai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(122, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(Ketchup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(Barbacoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel4)))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(Thai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(28, 28, 28)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Mostaza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel6))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(Ivatext, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Preciototal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(45, 45, 45)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Precio_final, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 144, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Ketchup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Mostaza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Barbacoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Thai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                .addGap(36, 36, 36)
+                .addComponent(Preciototal)
+                .addGap(18, 18, 18)
+                .addComponent(Ivatext)
+                .addGap(18, 18, 18)
+                .addComponent(Precio_final)
+                .addGap(50, 50, 50)
                 .addComponent(Pedido, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(170, 170, 170))
+                .addContainerGap(123, Short.MAX_VALUE))
         );
 
         jMenu1.setText("Pedido");
@@ -299,9 +360,9 @@ public class BurgerMenu extends javax.swing.JFrame {
 
     private void PedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PedidoActionPerformed
         // TODO add your handling code here:
-        double precio = 8;
-        double sumasalsas;
-        
+        Double precio = 8.00;
+        Double sumasalsas;
+//Posibilidades del menu
         if (HTernera.isSelected() || HVegana.isSelected()) {
             precio = precio + 1;
         }
@@ -319,15 +380,26 @@ public class BurgerMenu extends javax.swing.JFrame {
         }
         if (Extrapatatas.isSelected()) {
             precio = precio + 1;
-
-        
+        }
+        sumasalsas = (Double.parseDouble(String.valueOf(Ketchup.getValue()))  + Double.parseDouble(String.valueOf(Thai.getValue())) + Double.parseDouble(String.valueOf(Barbacoa.getValue())) + Double.parseDouble(String.valueOf(Mostaza.getValue()))) * 0.5;
+precio=precio+sumasalsas;
         if (Recogidalocal.isSelected()) {
             double descuento = precio * 0.2;
             precio = precio - descuento;
         }
-        sumasalsas = ((Double) Ketchup.getValue()  +  (Double) Mostaza.getValue() + (Double) Thai.getValue() + (Double) Barbacoa.getValue()) * 0.5;
+        double iva = precio * 0.21;
+        double precio_final = precio + iva;
+
+        Preciototal.setText("El precio es: " + String.valueOf(precio));
+        Precio_final.setText("El precio final es: " + String.valueOf(precio_final));
+        Ivatext.setText("El iva es: " + String.valueOf(iva));
+        Preciototal.setVisible(true);
+        Precio_final.setVisible(true);
+        Ivatext.setVisible(true);
+
+
     }//GEN-LAST:event_PedidoActionPerformed
-    }
+
     private void SalsasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalsasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SalsasActionPerformed
@@ -363,6 +435,7 @@ public class BurgerMenu extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new BurgerMenu().setVisible(true);
+
             }
         });
     }
@@ -387,6 +460,7 @@ public class BurgerMenu extends javax.swing.JFrame {
     private javax.swing.JRadioButtonMenuItem HTernera;
     private javax.swing.JRadioButtonMenuItem HVegana;
     private javax.swing.JMenu Hamburguesa;
+    private javax.swing.JLabel Ivatext;
     private javax.swing.JSpinner Ketchup;
     private javax.swing.JSpinner Mostaza;
     private javax.swing.JRadioButtonMenuItem PCaseras;
@@ -398,13 +472,20 @@ public class BurgerMenu extends javax.swing.JFrame {
     private javax.swing.JRadioButtonMenuItem PanNormal;
     private javax.swing.JMenu Patatas;
     private javax.swing.JButton Pedido;
+    private javax.swing.JLabel Precio_final;
+    private javax.swing.JLabel Preciototal;
     private javax.swing.JCheckBoxMenuItem Recogidalocal;
     private javax.swing.JCheckBoxMenuItem Salsas;
     private javax.swing.JSpinner Thai;
     private javax.swing.JRadioButtonMenuItem bAgua;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel1;
+    private java.awt.Scrollbar scrollbar1;
     // End of variables declaration//GEN-END:variables
 }
